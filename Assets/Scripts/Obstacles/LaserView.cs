@@ -7,7 +7,6 @@ namespace Obstacles
 {
     public class LaserView : ObstacleBase
     {
-        [SerializeField] private SpriteRenderer _sprite;
         [SerializeField] private float _period = 3;
 
         private bool _active;

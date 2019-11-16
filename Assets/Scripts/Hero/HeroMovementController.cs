@@ -33,7 +33,6 @@ public class HeroMovementController : MonoBehaviour
 
     private bool CheckGroundedState()
     {
-        Debug.DrawLine(_castPoint.position, _castPoint.position - transform.up * 0.35f);
         if (Physics2D.Raycast(_castPoint.position, -transform.up, 0.35f, ~LayerMask.NameToLayer("Ground")))
         {
             return true;
