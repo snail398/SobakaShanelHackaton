@@ -117,7 +117,6 @@ namespace HeroSpace
         }
     }
 
-
     public enum BehaviourType
     {
         NormalRun,

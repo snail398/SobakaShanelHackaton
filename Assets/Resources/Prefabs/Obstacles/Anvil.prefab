@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 67510154570909078}
+  _ySpawnPos: 7
 --- !u!61 &67510154570909076
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -19,6 +19,14 @@ namespace Obstacles
             Observable.Timer(System.TimeSpan.FromSeconds(_period)).Repeat().Subscribe(_ => ChangeState()).AddTo(this);
         }
 
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (collision.tag == "Player" && Active)
+            {
+                collision.GetComponent<HeroDeath>().Die();
+            }
+        }
+
         private void ChangeState()
         {
             if (_active)

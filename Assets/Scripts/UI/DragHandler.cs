@@ -41,7 +41,7 @@ namespace UI
         public void OnEndDrag(PointerEventData eventData)
         {
             Vector3 her = Camera.main.ScreenToWorldPoint(eventData.position);
-            Vector3 instPos = new Vector3(her.x, her.y, 0);
+            Vector3 instPos = new Vector3(her.x, _prefab.YSpawnPos, 0);
             if (_prefab is PitView)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

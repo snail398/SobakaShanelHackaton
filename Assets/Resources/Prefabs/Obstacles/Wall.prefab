@@ -120,3 +120,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 2828809707480501260}
+  _ySpawnPos: 3.05
