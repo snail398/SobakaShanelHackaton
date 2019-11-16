@@ -9,6 +9,8 @@ public class HeroDeath : MonoBehaviour
     {
         if (collision.gameObject.layer == 10)
             Die();
+        else if (collision.gameObject.layer == 11)
+            Lose();
     }
     public void Die()
         {
@@ -16,4 +18,9 @@ public class HeroDeath : MonoBehaviour
             //Destroy(this.gameObject);
             SceneManager.LoadScene("SampleScene");//Change name of scene???
         }
+    public void Lose()
+    {
+        //play anim
+        SceneManager.LoadScene("MainMenu");//or some scene with info about ur death
+    }
 }
