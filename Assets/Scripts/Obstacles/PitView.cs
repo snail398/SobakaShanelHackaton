@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Obstacles
 {
-    public class ObstacleBase : MonoBehaviour
+    public class PitView : ObstacleBase
     {
         // Start is called before the first frame update
         void Start()

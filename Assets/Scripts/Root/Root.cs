@@ -1,4 +1,6 @@
 ﻿using HeroSpace;
+using Obstacles;
+using InventorySpace;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,9 +14,11 @@ namespace RootSpace
 
         [SerializeField] private HeroView _heroPrefab;
         [SerializeField] private CameraController _camera;
+        [SerializeField] private InventoryView _inventoryView;
 
         [Header("Start Settings")]
         [SerializeField] private Vector2 _startPos;
+        [SerializeField] private List<ObstacleBase> _obstacles;
 
         private Hero _hero;
 
@@ -35,6 +39,8 @@ namespace RootSpace
                 mainView = view,
                 detector = view.GetComponentInChildren<ObstacleDetector>(),
                 nearDetector = view.GetComponentInChildren<NearDetector>(),
+                inventoryView = _inventoryView,
+                obstacles = _obstacles,
             };
             _hero = new Hero(heroCtx);
             _camera.Hero = view.transform;

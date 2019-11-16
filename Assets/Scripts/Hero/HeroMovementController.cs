@@ -25,11 +25,6 @@ public class HeroMovementController : MonoBehaviour
         _transform = GetComponent<Transform>();
     }
 
-    private void Update()
-    {
-        CheckGroundedState();    
-    }
-    
     public void RunForward()
     {
         SetFullGravity();
