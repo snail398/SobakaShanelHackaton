@@ -15,26 +15,37 @@ namespace InventorySpace
         }
 
         private Ctx _ctx;
-        private List<ObstacleBase> _obstacleList = new List<ObstacleBase>();
+        private Dictionary<ObstacleBase, int> _inventory = new Dictionary<ObstacleBase, int>();
 
         public Inventory(Ctx ctx)
         {
             _ctx = ctx;
             FillInventory();
+            foreach (var slot in _ctx.view.Slots)
+            {
+                slot.OnObstaclePlaced += UseObstacle;
+            }
         }
 
         private void FillInventory()
         {
             foreach (var item in _ctx.obstacles)
             {
-                _obstacleList.Add(item);
+                _inventory.Add(item, 3);
             }
             DrawInventory();
         }
 
         public void DrawInventory()
         {
-            _ctx.view.DrawInventory(_obstacleList);
+            _ctx.view.DrawInventory(_inventory);
+        }
+
+        private void UseObstacle(ObstacleBase item)
+        {
+            if (_inventory.ContainsKey(item))
+                _inventory[item]--;
+            DrawInventory();
         }
     }
 }
