@@ -1242,10 +1242,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3373771315438840656}
   - component: {fileID: 3373771315438840657}
-  - component: {fileID: 907715439351956152}
   - component: {fileID: 1915747758635602711}
   - component: {fileID: 1230439196635447135}
   - component: {fileID: 248920587972496294}
+  - component: {fileID: 7669275057733761512}
   m_Layer: 0
   m_Name: HeroNew
   m_TagString: Player
@@ -1291,22 +1291,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &907715439351956152
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3373771315438840655}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.55}
-  serializedVersion: 2
-  m_Radius: 2.69
 --- !u!50 &1915747758635602711
 Rigidbody2D:
   serializedVersion: 4
@@ -1357,6 +1341,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7579fcfab7d162c4b9706337ad4b3ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &7669275057733761512
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373771315438840655}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 2.66, y: 5.25}
+  m_Direction: 0
 --- !u!1 &3373771315494581209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,7 +1571,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6, y: 3.09}
+  m_Size: {x: 2.99, y: 3.09}
   m_EdgeRadius: 0
 --- !u!114 &2590761677980050123
 MonoBehaviour:
