@@ -9,6 +9,7 @@ public class HeroMovementController : MonoBehaviour
     [SerializeField] private float _climbSpeed;
     [SerializeField] private float _jumpForce;
     [SerializeField] private Transform _castPoint;
+    [SerializeField] private HeroDeath _heroDeath;
 
     private Rigidbody2D _rigidbody2D;
     private Transform _transform;
@@ -27,8 +28,11 @@ public class HeroMovementController : MonoBehaviour
 
     public void RunForward()
     {
-        SetFullGravity();
-        _transform.position += Vector3.right * _speed   * Time.deltaTime;
+        if (!_heroDeath.IsDead)
+        {
+            SetFullGravity();
+            _transform.position += Vector3.right * _speed * Time.deltaTime;
+        }
     }
 
     private bool CheckGroundedState()
@@ -45,21 +49,28 @@ public class HeroMovementController : MonoBehaviour
 
     public void Walk()
     {
-        SetFullGravity();
-            _transform.position += Vector3.right * _speed * 0.5f * Time.deltaTime;
+        if (!_heroDeath.IsDead)
+            SetFullGravity();
+                _transform.position += Vector3.right * _speed * 0.5f * Time.deltaTime;
     }
 
     public void Jump()
     {
-        SetFullGravity();
-        if (CheckGroundedState())
-            _rigidbody2D.AddForce(Vector2.up * _jumpForce);
+        if (!_heroDeath.IsDead)
+        {
+            SetFullGravity();
+            if (CheckGroundedState())
+                _rigidbody2D.AddForce(Vector2.up * _jumpForce);
+        }
     }
 
     public void Climb()
     {
-        SetZeroGravity();
-        _transform.position += Vector3.up * _climbSpeed * Time.deltaTime;
+        if (!_heroDeath.IsDead)
+        {
+            SetZeroGravity();
+            _transform.position += Vector3.up * _climbSpeed * Time.deltaTime;
+        }
     }
 
     private void SetZeroGravity()
