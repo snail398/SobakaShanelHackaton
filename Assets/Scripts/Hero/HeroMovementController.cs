@@ -13,6 +13,7 @@ public class HeroMovementController : MonoBehaviour
 
     private Rigidbody2D _rigidbody2D;
     private Transform _transform;
+    private Animator _anim;
 
     public float Speed
     {
@@ -24,6 +25,7 @@ public class HeroMovementController : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _transform = GetComponent<Transform>();
+        _anim = GetComponent<Animator>();
     }
 
     public void RunForward()
@@ -32,6 +34,7 @@ public class HeroMovementController : MonoBehaviour
         {
             SetFullGravity();
             _transform.position += Vector3.right * _speed * Time.deltaTime;
+            _anim.SetBool("Climb", false);
         }
     }
 
@@ -52,6 +55,7 @@ public class HeroMovementController : MonoBehaviour
         if (!_heroDeath.IsDead)
             SetFullGravity();
                 _transform.position += Vector3.right * _speed * 0.5f * Time.deltaTime;
+        _anim.SetBool("Climb", false);
     }
 
     public void Jump()
@@ -61,6 +65,7 @@ public class HeroMovementController : MonoBehaviour
             SetFullGravity();
             if (CheckGroundedState())
                 _rigidbody2D.AddForce(Vector2.up * _jumpForce);
+            _anim.SetBool("Climb", false);
         }
     }
 
@@ -70,6 +75,7 @@ public class HeroMovementController : MonoBehaviour
         {
             SetZeroGravity();
             _transform.position += Vector3.up * _climbSpeed * Time.deltaTime;
+            _anim.SetBool("Climb", true);
         }
     }
 

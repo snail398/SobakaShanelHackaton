@@ -41,7 +41,10 @@ namespace UI
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            OnObstaclePlaced?.Invoke(_prefab);
+            if (transform.parent == startParent)
+            {
+                transform.position = startPosition;
+            }
             Vector3 her = Camera.main.ScreenToWorldPoint(eventData.position);
             Vector3 instPos = new Vector3(her.x, _prefab.YSpawnPos, 0);
             if (_prefab is PitView)
@@ -53,12 +56,11 @@ namespace UI
                     Destroy(hit.collider.gameObject);
                     instPos = hit.collider.transform.position;
                 }
+                else
+                    return;
             }
             Instantiate(_prefab, instPos, Quaternion.identity);
-            if (transform.parent == startParent)
-            {
-                transform.position = startPosition;
-            }
+            OnObstaclePlaced?.Invoke(_prefab);
         }
 
         #endregion

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class HeroDeath : MonoBehaviour
+
 {
     private bool _isDead;
 
@@ -27,7 +28,7 @@ public class HeroDeath : MonoBehaviour
         //Destroy(this.gameObject);
         _isDead = true;
             SceneManager.LoadScene("SampleScene");//Change name of scene???
-        }
+    }
     public void Lose()
     {
         //play anim
