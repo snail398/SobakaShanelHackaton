@@ -13,11 +13,11 @@ public class HeroDeath : MonoBehaviour
             Lose();
     }
     public void Die()
-        {
+    {
             //play dying anim;
             //Destroy(this.gameObject);
             SceneManager.LoadScene("SampleScene");//Change name of scene???
-        }
+    }
     public void Lose()
     {
         //play anim

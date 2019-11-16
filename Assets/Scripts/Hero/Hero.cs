@@ -42,6 +42,8 @@ namespace HeroSpace
         {
             BehaviourController.Ctx behCtx = new BehaviourController.Ctx
             {
+                setwait = _ctx.mainView.SetWaitT,
+                setwaitf = _ctx.mainView.SetWaitF,
                 jump = _ctx.mainView.Jump,
                 runForward = _ctx.mainView.RunForward,
                 climb = _ctx.mainView.Climb,
