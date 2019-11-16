@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleBase : MonoBehaviour
+namespace Obstacles
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ObstacleBase : MonoBehaviour
     {
-        
-    }
+        [SerializeField] protected SpriteRenderer _sprite;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public Sprite ObstacleSprite => _sprite.sprite;
+        public Color ObstacleColor => _sprite.color;
     }
 }

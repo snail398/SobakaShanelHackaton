@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Obstacles;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UniRx;
