@@ -46,6 +46,7 @@ namespace HeroSpace
                 runForward = _ctx.mainView.RunForward,
                 climb = _ctx.mainView.Climb,
                 wait = () => { },
+                walk = _ctx.mainView.Walk,
                 getDelayTime = () => (_ctx.detector.ColliderRadius / _ctx.mainView.GetSpeed()) * 0.15f,
             };
             _behaviourController = new BehaviourController(behCtx);

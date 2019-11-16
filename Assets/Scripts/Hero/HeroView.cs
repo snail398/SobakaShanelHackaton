@@ -40,5 +40,10 @@ namespace HeroSpace
         {
             _movementController.Climb();
         }
+
+        public void Walk()
+        {
+            _movementController.Walk();
+        }
     }
 }

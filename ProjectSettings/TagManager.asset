@@ -7,6 +7,8 @@ TagManager:
   - Pit
   - Wall
   - Laser
+  - Spike
+  - Kitty
   layers:
   - Default
   - TransparentFX

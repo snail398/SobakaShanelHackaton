@@ -43,6 +43,12 @@ public class HeroMovementController : MonoBehaviour
         }
     }
 
+    public void Walk()
+    {
+        SetFullGravity();
+            _transform.position += Vector3.right * _speed * 0.5f * Time.deltaTime;
+    }
+
     public void Jump()
     {
         SetFullGravity();

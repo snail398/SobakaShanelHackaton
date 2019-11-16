@@ -15,6 +15,10 @@ public class NearDetector : MonoBehaviour
         {
             OnTouchWall?.Invoke();
         }
+        if (collision.tag == "Kitty")
+        {
+            OnTouchWall?.Invoke();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

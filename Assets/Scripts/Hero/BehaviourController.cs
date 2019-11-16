@@ -14,12 +14,14 @@ namespace HeroSpace
             public Action jump;
             public Action wait;
             public Action climb;
+            public Action walk;
             public Func<float> getDelayTime;
         }
 
         private Ctx _ctx;
         private BehaviourType _currentBehaviour;
         private IDisposable _prepareForJumpHandler;
+        private IDisposable _waitKittyHandler;
         private ObstacleBase _currentObstacle;
 
         public ObstacleBase CurrentObstacle
@@ -59,7 +61,7 @@ namespace HeroSpace
                         .Subscribe(_ =>
                         {
                             CurrentBehaviour = BehaviourType.Jump;
-                            _prepareForJumpHandler.Dispose();
+                            _prepareForJumpHandler?.Dispose();
                         });
                     CurrentBehaviour = BehaviourType.NormalRun;
                     break;
@@ -72,6 +74,9 @@ namespace HeroSpace
                     break;
                 case BehaviourType.Climb:
                     _ctx.climb?.Invoke();
+                    break;
+                case BehaviourType.Walk:
+                    _ctx.walk?.Invoke();
                     break;
                 case BehaviourType.Wait:
                     _ctx.wait?.Invoke();
@@ -87,6 +92,8 @@ namespace HeroSpace
             {
                 return !laser.Active;
             }
+            if (_currentObstacle is KittyView)
+                return false;
             return true;
         }
 
@@ -97,17 +104,33 @@ namespace HeroSpace
                 case ObstacleType.Pit:
                     CurrentBehaviour = BehaviourType.PrepareForJump;
                     break;
+                case ObstacleType.Spike:
+                    CurrentBehaviour = BehaviourType.Jump;
+                    break;
                 case ObstacleType.Wall:
                     CurrentBehaviour = BehaviourType.PrepareForClimb;
                     break;
                 case ObstacleType.Laser:
                     CurrentBehaviour = BehaviourType.Wait;
                     break;
+                case ObstacleType.Kitty:
+                    CurrentBehaviour = BehaviourType.Walk;
+                    break;
             }
         }
 
         public void TouchWall()
         {
+            if (_currentObstacle is KittyView)
+            {
+                CurrentBehaviour = BehaviourType.Wait;
+                _waitKittyHandler = Observable.Timer(System.TimeSpan.FromSeconds(2)).Subscribe(_ =>
+                 {
+                     CurrentBehaviour = BehaviourType.NormalRun;
+                     _waitKittyHandler?.Dispose();
+                 });
+            }
+            else
             CurrentBehaviour = BehaviourType.Climb;
         }
 
@@ -125,5 +148,6 @@ namespace HeroSpace
         PrepareForClimb,
         Climb,
         Wait,
+        Walk,
     }
 }

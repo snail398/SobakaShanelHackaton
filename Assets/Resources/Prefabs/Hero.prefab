@@ -114,7 +114,6 @@ GameObject:
   - component: {fileID: 6516270718645111341}
   - component: {fileID: 3219863714368785009}
   - component: {fileID: 3282753038054183693}
-  - component: {fileID: 484457907134333778}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -136,6 +135,7 @@ Transform:
   - {fileID: 6512479142784683358}
   - {fileID: 724312102315694316}
   - {fileID: 5347061735870058803}
+  - {fileID: 722317753764347272}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -252,13 +252,61 @@ MonoBehaviour:
   _climbSpeed: 2
   _jumpForce: 300
   _castPoint: {fileID: 5347061735870058803}
---- !u!114 &484457907134333778
+--- !u!1 &8432560910371477131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 722317753764347272}
+  - component: {fileID: 5933231973617510016}
+  - component: {fileID: 3593192517763243161}
+  m_Layer: 0
+  m_Name: DieDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &722317753764347272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432560910371477131}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6516270718645111336}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &5933231973617510016
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8432560910371477131}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.5
+--- !u!114 &3593192517763243161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6516270718645111340}
+  m_GameObject: {fileID: 8432560910371477131}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18e5f76a2c9d40a77afddf7c6899f86e, type: 3}

@@ -32,6 +32,15 @@ namespace HeroSpace
             {
                 OnObstacleDetected?.Invoke(ObstacleType.Wall);
             }
+            if (collision.tag == "Spike")
+            {
+                OnObstacleDetected?.Invoke(ObstacleType.Spike);
+            }
+            if (collision.tag == "Kitty")
+            {
+                OnObstacleDetected1?.Invoke(collision.GetComponent<ObstacleBase>());
+                OnObstacleDetected?.Invoke(ObstacleType.Kitty);
+            }
             if (collision.tag == "Laser")
             {
                 OnObstacleDetected1?.Invoke(collision.GetComponent<ObstacleBase>());
@@ -45,5 +54,8 @@ namespace HeroSpace
         Pit,
         Wall,
         Laser,
+        Spike,
+        Kitty,
+
     }
 }
