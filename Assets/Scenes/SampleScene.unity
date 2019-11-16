@@ -4850,8 +4850,6 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
-=======
->>>>>>> c4cdc00e80ecfa97d716f5568ed8b184a55b249a
 --- !u!4 &1239612482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5953961744356766373, guid: 456c2e6f655146941b807cba213e9d5b,
@@ -5725,8 +5723,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371152118}
   m_CullTransparentMesh: 0
-=======
->>>>>>> c4cdc00e80ecfa97d716f5568ed8b184a55b249a
 --- !u!1001 &1372686911
 PrefabInstance:
   m_ObjectHideFlags: 0
