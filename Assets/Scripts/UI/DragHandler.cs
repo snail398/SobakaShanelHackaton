@@ -1,4 +1,5 @@
 ﻿using Obstacles;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace UI
         private ObstacleBase _prefab;
         Vector3 startPosition;
         Transform startParent;
-
+        public event Action<ObstacleBase> OnObstaclePlaced;
         public void SetPrefab(ObstacleBase obstacle)
         {
             _prefab = obstacle;
@@ -40,6 +41,7 @@ namespace UI
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            OnObstaclePlaced?.Invoke(_prefab);
             Vector3 her = Camera.main.ScreenToWorldPoint(eventData.position);
             Vector3 instPos = new Vector3(her.x, _prefab.YSpawnPos, 0);
             if (_prefab is PitView)

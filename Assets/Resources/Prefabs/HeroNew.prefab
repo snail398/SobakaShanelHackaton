@@ -1344,6 +1344,7 @@ MonoBehaviour:
   _climbSpeed: 2
   _jumpForce: 300
   _castPoint: {fileID: 8279657296466770975}
+  _heroDeath: {fileID: 3304316408335550033}
 --- !u!114 &248920587972496294
 MonoBehaviour:
   m_ObjectHideFlags: 0

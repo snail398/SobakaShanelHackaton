@@ -10,6 +10,7 @@ namespace HeroSpace
     {
         public struct Ctx
         {
+            public HeroView container;
             public Action runForward;
             public Action setwaitf;
             public Action setwait;
@@ -47,7 +48,7 @@ namespace HeroSpace
         public BehaviourController(Ctx ctx)
         {
             _ctx = ctx;
-            Observable.EveryUpdate().Subscribe(_ => Update());
+            Observable.EveryUpdate().Subscribe(_ => Update()).AddTo(_ctx.container);
             _currentBehaviour = BehaviourType.NormalRun;
         }
 
