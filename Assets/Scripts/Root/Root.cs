@@ -11,6 +11,7 @@ namespace RootSpace
     {
 
         [SerializeField] private HeroView _heroPrefab;
+        [SerializeField] private CameraController _camera;
 
         [Header("Start Settings")]
         [SerializeField] private Vector2 _startPos;
@@ -33,8 +34,10 @@ namespace RootSpace
             {
                 mainView = view,
                 detector = view.GetComponentInChildren<ObstacleDetector>(),
+                nearDetector = view.GetComponentInChildren<NearDetector>(),
             };
             _hero = new Hero(heroCtx);
+            _camera.Hero = view.transform;
             OnInitializeReady?.Invoke();
         }
 

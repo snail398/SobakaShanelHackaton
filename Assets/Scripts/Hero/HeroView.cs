@@ -30,5 +30,15 @@ namespace HeroSpace
         {
             _movementController.RunForward();
         }
+
+        public float GetSpeed()
+        {
+            return _movementController.Speed;
+        }
+
+        public void Climb()
+        {
+            _movementController.Climb();
+        }
     }
 }
