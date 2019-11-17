@@ -35,6 +35,7 @@ public class HeroMovementController : MonoBehaviour
             SetFullGravity();
             //_transform.position += Vector3.right * _speed * Time.deltaTime;
             _rigidbody2D.velocity = new Vector2(_speed * 1.0f * Time.deltaTime, _rigidbody2D.velocity.y);
+            _anim.SetTrigger("Run");
         }
         else
         {
@@ -64,6 +65,7 @@ public class HeroMovementController : MonoBehaviour
             SetFullGravity();
             //_transform.position += Vector3.right * _speed * 0.5f * Time.deltaTime;
             _rigidbody2D.velocity = new Vector2(_speed * 0.5f * Time.deltaTime, _rigidbody2D.velocity.y);
+            _anim.SetTrigger("Run");
         }
         else
         {
