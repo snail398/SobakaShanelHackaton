@@ -208,6 +208,7 @@ MonoBehaviour:
   _sprite: {fileID: 9072955188409409517}
   _ySpawnPos: 3.05
   _period: 3
+  _ray: {fileID: 1399854675146643909}
 --- !u!61 &4370905132004766419
 BoxCollider2D:
   m_ObjectHideFlags: 0

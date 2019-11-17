@@ -8,7 +8,7 @@ namespace Obstacles
     public class LaserView : ObstacleBase
     {
         [SerializeField] private float _period = 3;
-
+        [SerializeField] private SpriteRenderer _ray;
         private bool _active;
 
         public bool Active => _active;
@@ -38,13 +38,13 @@ namespace Obstacles
         private void SetActive()
         {
             _active = true;
-            _sprite.color = new Color(_sprite.color.r, _sprite.color.g, _sprite.color.b, 1);
+            _ray.color = new Color(_ray.color.r, _ray.color.g, _ray.color.b, 1);
         }
 
         private void SetInActive()
         {
             _active = false;
-            _sprite.color = new Color(_sprite.color.r, _sprite.color.g, _sprite.color.b, 0.2f);
+            _ray.color = new Color(_ray.color.r, _ray.color.g, _ray.color.b, 0.2f);
         }
     }
 }
