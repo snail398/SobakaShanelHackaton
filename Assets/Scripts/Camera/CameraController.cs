@@ -31,6 +31,13 @@ public class CameraController : MonoBehaviour
 
     public void RestartScene()
     {
+        StartCoroutine(RestScene());
+    }
+
+    IEnumerator RestScene()
+    {
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
 }

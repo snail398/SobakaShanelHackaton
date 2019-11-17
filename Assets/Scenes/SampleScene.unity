@@ -5319,6 +5319,7 @@ GameObject:
   - component: {fileID: 1061792769}
   - component: {fileID: 1061792768}
   - component: {fileID: 1061792770}
+  - component: {fileID: 1061792771}
   m_Layer: 5
   m_Name: Pizza
   m_TagString: Untagged
@@ -5365,7 +5366,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: cab7e4089c30c624d9ba2dbb4388fcf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 40c77a0b1d5ac1645b4d92210db3dba1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5400,7 +5401,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -5433,8 +5434,38 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1061792771}
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: Pizza
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!95 &1061792771
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061792766}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6018ba0ab72ec142a4d594a94f06bd4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1062745370
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10316,7 +10347,11 @@ PrefabInstance:
     - target: {fileID: 703005893386301487, guid: 615f66502d2adac40940f4fe598b96d0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
+<<<<<<< HEAD
       value: 15.000122
+=======
+      value: 794
+>>>>>>> 4d11f2b4488d8104c31fd41b93e2e411c783364a
       objectReference: {fileID: 0}
     - target: {fileID: 703005893386301487, guid: 615f66502d2adac40940f4fe598b96d0,
         type: 3}
@@ -10326,6 +10361,7 @@ PrefabInstance:
     - target: {fileID: 703005893386301487, guid: 615f66502d2adac40940f4fe598b96d0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
+<<<<<<< HEAD
       value: 15.000122
       objectReference: {fileID: 0}
     - target: {fileID: 703005893386301484, guid: 615f66502d2adac40940f4fe598b96d0,
@@ -10337,6 +10373,9 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+=======
+      value: 794
+>>>>>>> 4d11f2b4488d8104c31fd41b93e2e411c783364a
       objectReference: {fileID: 0}
     - target: {fileID: 703005894122810932, guid: 615f66502d2adac40940f4fe598b96d0,
         type: 3}
