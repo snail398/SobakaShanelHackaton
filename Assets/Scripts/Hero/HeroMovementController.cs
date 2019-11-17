@@ -35,7 +35,6 @@ public class HeroMovementController : MonoBehaviour
             SetFullGravity();
             //_transform.position += Vector3.right * _speed * Time.deltaTime;
             _rigidbody2D.velocity = new Vector2(_speed * 1.0f * Time.deltaTime, _rigidbody2D.velocity.y);
-            _anim.SetBool("Climb", false);
         }
         else
         {
@@ -50,7 +49,7 @@ public class HeroMovementController : MonoBehaviour
             SetFullGravity();
             //_transform.position += Vector3.right * _speed * 1.5f * Time.deltaTime;
             _rigidbody2D.velocity = new Vector2(_speed * 1.5f * Time.deltaTime, _rigidbody2D.velocity.y);
-            _anim.SetBool("Climb", false);
+            _anim.SetTrigger("Glide");
         }
         else
         {
@@ -65,7 +64,6 @@ public class HeroMovementController : MonoBehaviour
             SetFullGravity();
             //_transform.position += Vector3.right * _speed * 0.5f * Time.deltaTime;
             _rigidbody2D.velocity = new Vector2(_speed * 0.5f * Time.deltaTime, _rigidbody2D.velocity.y);
-            _anim.SetBool("Climb", false);
         }
         else
         {
@@ -107,7 +105,7 @@ public class HeroMovementController : MonoBehaviour
             SetZeroGravity();
             //_transform.position += Vector3.up * _climbSpeed * Time.deltaTime;
             _rigidbody2D.velocity = new Vector2(0, _climbSpeed * Time.deltaTime);
-            _anim.SetBool("Climb", true);
+            _anim.SetTrigger("Climb");
         }
         else
         {
@@ -122,6 +120,7 @@ public class HeroMovementController : MonoBehaviour
             SetFullGravity();
             //_transform.position += Vector3.up * _climbSpeed * Time.deltaTime;
             _rigidbody2D.velocity = Vector2.zero;
+            _anim.SetTrigger("Idle");
         }
     }
 

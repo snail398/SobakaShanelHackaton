@@ -11,6 +11,7 @@ TagManager:
   - Kitty
   - Ice
   - Detector
+  - Slot
   layers:
   - Default
   - TransparentFX

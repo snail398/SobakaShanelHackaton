@@ -8,14 +8,12 @@ namespace HeroSpace
     public class HeroView : MonoBehaviour
     {
         private HeroMovementController _movementController;
-        private Animator _anim;
 
         public event Action OnTick;
 
         private void Awake()
         {
             _movementController = GetComponent<HeroMovementController>();
-            _anim = GetComponent<Animator>();
         }
 
         private void Update()
@@ -46,16 +44,6 @@ namespace HeroSpace
         public void Walk()
         {
             _movementController.Walk();
-        }
-
-        public void SetWaitT()
-        {
-            _anim.SetBool("Idle", true);
-        }
-
-        public void SetWaitF()
-        {
-            _anim.SetBool("Idle", false);
         }
 
         public void Slide()

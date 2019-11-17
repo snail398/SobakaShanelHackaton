@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e782c185ab2eb884892cdcf34acd3807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 1399854675146643909}
+  _sprite: {fileID: 9072955188409409517}
   _ySpawnPos: 3.05
   _period: 3
 --- !u!61 &4370905132004766419
