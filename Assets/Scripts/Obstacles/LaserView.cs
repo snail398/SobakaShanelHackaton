@@ -23,7 +23,7 @@ namespace Obstacles
         {
             if (collision.tag == "Player" && Active)
             {
-                collision.GetComponent<HeroDeath>().Die();
+                collision.GetComponentInChildren<HeroDeath>().Die();
             }
         }
 

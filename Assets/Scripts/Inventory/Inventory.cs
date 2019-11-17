@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace InventorySpace
 {
@@ -29,9 +30,17 @@ namespace InventorySpace
 
         private void FillInventory()
         {
-            foreach (var item in _ctx.obstacles)
+            List<int> added = new List<int>();
+
+            for (int i = 0; i < 3; i++)
             {
-                _inventory.Add(item, 3);
+                int temp = Random.Range(0, _ctx.obstacles.Count);
+                while (added.Contains(temp))
+                {
+                    temp = Random.Range(0, _ctx.obstacles.Count);
+                }
+                added.Add(temp);
+                _inventory.Add(_ctx.obstacles[temp], 3);
             }
             DrawInventory();
         }

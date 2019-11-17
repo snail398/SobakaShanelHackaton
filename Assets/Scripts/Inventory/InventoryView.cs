@@ -34,7 +34,7 @@ namespace InventorySpace
             trans.transform.SetParent(slot.transform); // setting parent
             trans.localScale = Vector3.one;
             trans.anchoredPosition = pos; // setting position, will be on center
-            trans.sizeDelta = new Vector2(100, 100); // custom size
+            //trans.sizeDelta = new Vector2(50, 50); // custom size
 
             Image image = imgObject.AddComponent<Image>();
             image.sprite = item.ObstacleSprite;
