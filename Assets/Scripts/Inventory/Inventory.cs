@@ -30,6 +30,13 @@ namespace InventorySpace
 
         private void FillInventory()
         {
+            //DevVersion
+            foreach (var item in _ctx.obstacles)
+            {
+                _inventory.Add(item, 10);
+            }
+            //ProdVersion
+            /*
             List<int> added = new List<int>();
 
             for (int i = 0; i < 3; i++)
@@ -42,6 +49,7 @@ namespace InventorySpace
                 added.Add(temp);
                 _inventory.Add(_ctx.obstacles[temp], 3);
             }
+            */
             DrawInventory();
         }
 
