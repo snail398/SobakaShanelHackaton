@@ -12,8 +12,6 @@ namespace HeroSpace
         {
             public HeroView container;
             public Action runForward;
-            public Action setwaitf;
-            public Action setwait;
             public Action jump;
             public Action wait;
             public Action climb;
@@ -60,7 +58,6 @@ namespace HeroSpace
             switch (_currentBehaviour)
             {
                 case BehaviourType.NormalRun:
-                    _ctx.setwaitf?.Invoke();
                     _ctx.runForward?.Invoke();
                     break;
                 case BehaviourType.PrepareForJump:
@@ -73,7 +70,6 @@ namespace HeroSpace
                     CurrentBehaviour = BehaviourType.NormalRun;
                     break;
                 case BehaviourType.Jump:
-                    _ctx.setwaitf?.Invoke();
                     _ctx.jump?.Invoke();
                     CurrentBehaviour = BehaviourType.NormalRun;
                     break;
@@ -81,21 +77,17 @@ namespace HeroSpace
                     _currentBehaviour = BehaviourType.Jump;
                     break;
                 case BehaviourType.Climb:
-                    _ctx.setwaitf?.Invoke();
                     _ctx.climb?.Invoke();
                     break;
                 case BehaviourType.Walk:
-                    _ctx.setwaitf?.Invoke();
                     _ctx.walk?.Invoke();
                     break;
                 case BehaviourType.Wait:
-                    _ctx.setwait?.Invoke();
                     _ctx.wait?.Invoke();
                     if (CheckObstacle())
                         CurrentBehaviour = BehaviourType.NormalRun;
                     break;
                 case BehaviourType.Slide:
-                    _ctx.setwaitf?.Invoke();
                     _ctx.slide?.Invoke();
                     _slideHandler = Observable.Timer(System.TimeSpan.FromSeconds(0.8f))
                         .Subscribe(_ =>

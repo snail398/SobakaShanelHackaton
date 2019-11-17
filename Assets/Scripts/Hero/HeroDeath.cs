@@ -28,7 +28,7 @@ public class HeroDeath : MonoBehaviour
         //play dying anim;
         //Destroy(this.gameObject);
         _isDead = true;
-        _anim.SetBool("Death", true);
+        _anim.SetTrigger("Death");
         GameResultHandler.Instance.WinGame();
           //  SceneManager.LoadScene("SampleScene");//Change name of scene???
     }
