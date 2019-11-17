@@ -33,8 +33,58 @@ public class HeroMovementController : MonoBehaviour
         if (!_heroDeath.IsDead)
         {
             SetFullGravity();
-            _transform.position += Vector3.right * _speed * Time.deltaTime;
+            //_transform.position += Vector3.right * _speed * Time.deltaTime;
+            _rigidbody2D.velocity = new Vector2(_speed * 1.0f * Time.deltaTime, _rigidbody2D.velocity.y);
             _anim.SetBool("Climb", false);
+        }
+        else
+        {
+            _rigidbody2D.velocity = Vector2.zero;
+        }
+    }
+
+    public void Slide()
+    {
+        if (!_heroDeath.IsDead)
+        {
+            SetFullGravity();
+            //_transform.position += Vector3.right * _speed * 1.5f * Time.deltaTime;
+            _rigidbody2D.velocity = new Vector2(_speed * 1.5f * Time.deltaTime, _rigidbody2D.velocity.y);
+            _anim.SetBool("Climb", false);
+        }
+        else
+        {
+            _rigidbody2D.velocity = Vector2.zero;
+        }
+    }
+
+    public void Walk()
+    {
+        if (!_heroDeath.IsDead)
+        {
+            SetFullGravity();
+            //_transform.position += Vector3.right * _speed * 0.5f * Time.deltaTime;
+            _rigidbody2D.velocity = new Vector2(_speed * 0.5f * Time.deltaTime, _rigidbody2D.velocity.y);
+            _anim.SetBool("Climb", false);
+        }
+        else
+        {
+            _rigidbody2D.velocity = Vector2.zero;
+        }
+    }
+
+    public void Jump()
+    {
+        if (!_heroDeath.IsDead)
+        {
+            SetFullGravity();
+            if (CheckGroundedState())
+                _rigidbody2D.AddForce(Vector2.up * _jumpForce);
+            _anim.SetBool("Climb", false);
+        }
+        else
+        {
+            _rigidbody2D.velocity = Vector2.zero;
         }
     }
 
@@ -50,32 +100,28 @@ public class HeroMovementController : MonoBehaviour
         }
     }
 
-    public void Walk()
-    {
-        if (!_heroDeath.IsDead)
-            SetFullGravity();
-                _transform.position += Vector3.right * _speed * 0.5f * Time.deltaTime;
-        _anim.SetBool("Climb", false);
-    }
-
-    public void Jump()
-    {
-        if (!_heroDeath.IsDead)
-        {
-            SetFullGravity();
-            if (CheckGroundedState())
-                _rigidbody2D.AddForce(Vector2.up * _jumpForce);
-            _anim.SetBool("Climb", false);
-        }
-    }
-
     public void Climb()
     {
         if (!_heroDeath.IsDead)
         {
             SetZeroGravity();
-            _transform.position += Vector3.up * _climbSpeed * Time.deltaTime;
+            //_transform.position += Vector3.up * _climbSpeed * Time.deltaTime;
+            _rigidbody2D.velocity = new Vector2(0, _climbSpeed * Time.deltaTime);
             _anim.SetBool("Climb", true);
+        }
+        else
+        {
+            _rigidbody2D.velocity = Vector2.zero;
+        }
+    }
+
+    public void Wait()
+    {
+        if (!_heroDeath.IsDead)
+        {
+            SetFullGravity();
+            //_transform.position += Vector3.up * _climbSpeed * Time.deltaTime;
+            _rigidbody2D.velocity = Vector2.zero;
         }
     }
 

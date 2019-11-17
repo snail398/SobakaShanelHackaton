@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class HeroDeath : MonoBehaviour
-
 {
+    private Animator _anim;
     private bool _isDead;
 
     public bool IsDead => _isDead;
 
     private void Awake()
     {
+        _anim = GetComponentInParent<Animator>();
         _isDead = false;
     }
 
@@ -27,11 +28,13 @@ public class HeroDeath : MonoBehaviour
         //play dying anim;
         //Destroy(this.gameObject);
         _isDead = true;
-            SceneManager.LoadScene("SampleScene");//Change name of scene???
+        _anim.SetBool("Death", true);
+        GameResultHandler.Instance.WinGame();
+          //  SceneManager.LoadScene("SampleScene");//Change name of scene???
     }
     public void Lose()
     {
         //play anim
-        SceneManager.LoadScene("MainMenu");//or some scene with info about ur death
+        GameResultHandler.Instance.LoseGame();
     }
 }

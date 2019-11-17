@@ -20,7 +20,7 @@ namespace HeroSpace
         private Ctx _ctx;
         private BehaviourController _behaviourController;
         private Inventory _inventory;
-
+        private bool _isFreezed;
         public Hero(Ctx ctx)
         {
             _ctx = ctx;
@@ -28,6 +28,12 @@ namespace HeroSpace
             CreateInventory();
             if (_ctx.detector != null)
             {
+                ObstacleDetector.Ctx obsDetCtx = new ObstacleDetector.Ctx
+                {
+                    isFreezed = () => _isFreezed,
+                    setFreezeState = (b) => _isFreezed = b,
+                };
+                _ctx.detector.SetCtx(obsDetCtx);
                 _ctx.detector.OnObstacleDetected += _behaviourController.ObstacleHandle;
                 _ctx.detector.OnObstacleDetected1 += (obstacle) => _behaviourController.CurrentObstacle = obstacle;
             }
@@ -48,8 +54,10 @@ namespace HeroSpace
                 jump = _ctx.mainView.Jump,
                 runForward = _ctx.mainView.RunForward,
                 climb = _ctx.mainView.Climb,
-                wait = () => { },
+                wait = _ctx.mainView.Wait,
                 walk = _ctx.mainView.Walk,
+                slide = _ctx.mainView.Slide,
+                endSlide = () => _isFreezed = false,
                 getDelayTime = () => (_ctx.detector.ColliderRadius / _ctx.mainView.GetSpeed()) * 0.15f,
             };
             _behaviourController = new BehaviourController(behCtx);
@@ -64,7 +72,6 @@ namespace HeroSpace
             };
             _inventory = new Inventory(inventoryCtx);
         }
-
 
         public float GetDelayTime()
         {

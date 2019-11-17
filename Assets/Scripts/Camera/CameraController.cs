@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField] private Vector3 offset;
     private Transform _hero;
-
+    private float _startY;
     public Transform Hero
     {
         get
@@ -15,6 +17,7 @@ public class CameraController : MonoBehaviour
         set
         {
             _hero = value;
+            _startY = _hero.position.y;
         }
     }
 
@@ -22,7 +25,12 @@ public class CameraController : MonoBehaviour
     {
         if (_hero != null)
         {
-            transform.position = new Vector3(_hero.position.x, _hero.position.y, transform.position.z);
+            transform.position = new Vector3(_hero.position.x, _startY, transform.position.z) + offset;
         }
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

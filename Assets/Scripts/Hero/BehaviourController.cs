@@ -18,6 +18,8 @@ namespace HeroSpace
             public Action wait;
             public Action climb;
             public Action walk;
+            public Action slide;
+            public Action endSlide;
             public Func<float> getDelayTime;
         }
 
@@ -25,6 +27,7 @@ namespace HeroSpace
         private BehaviourType _currentBehaviour;
         private IDisposable _prepareForJumpHandler;
         private IDisposable _waitKittyHandler;
+        private IDisposable _slideHandler;
         private ObstacleBase _currentObstacle;
 
         public ObstacleBase CurrentObstacle
@@ -91,6 +94,17 @@ namespace HeroSpace
                     if (CheckObstacle())
                         CurrentBehaviour = BehaviourType.NormalRun;
                     break;
+                case BehaviourType.Slide:
+                    _ctx.setwaitf?.Invoke();
+                    _ctx.slide?.Invoke();
+                    _slideHandler = Observable.Timer(System.TimeSpan.FromSeconds(0.8f))
+                        .Subscribe(_ =>
+                        {
+                            _ctx.endSlide?.Invoke();
+                            CurrentBehaviour = BehaviourType.NormalRun;
+                            _slideHandler?.Dispose();
+                        });
+                    break;
             }
         }
 
@@ -123,6 +137,9 @@ namespace HeroSpace
                     break;
                 case ObstacleType.Kitty:
                     CurrentBehaviour = BehaviourType.Walk;
+                    break;
+                case ObstacleType.Ice:
+                    CurrentBehaviour = BehaviourType.Slide;
                     break;
             }
         }
@@ -157,5 +174,6 @@ namespace HeroSpace
         Climb,
         Wait,
         Walk,
+        Slide,
     }
 }

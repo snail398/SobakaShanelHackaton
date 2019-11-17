@@ -1262,7 +1262,7 @@ Transform:
   m_GameObject: {fileID: 3373771315438840655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.18, z: 0}
-  m_LocalScale: {x: 0.28532863, y: 0.28532863, z: 0.28532863}
+  m_LocalScale: {x: 0.17, y: 0.28532863, z: 0.28532863}
   m_Children:
   - {fileID: 7611009779512966042}
   - {fileID: 595625166832813766}
@@ -1303,7 +1303,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 50
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -1324,9 +1324,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1868424ad65b64e881e45ad564c806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
-  _climbSpeed: 2
-  _jumpForce: 300
+  _speed: 200
+  _climbSpeed: 100
+  _jumpForce: 15000
   _castPoint: {fileID: 8279657296466770975}
   _heroDeath: {fileID: 3304316408335550033}
 --- !u!114 &248920587972496294
@@ -1541,7 +1541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3719136378085369572}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.83, y: -0.852, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3373771315438840656}
@@ -1598,7 +1598,7 @@ GameObject:
   - component: {fileID: 3057129453372251638}
   m_Layer: 0
   m_Name: Detector
-  m_TagString: Untagged
+  m_TagString: Detector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1689,7 +1689,7 @@ GameObject:
   - component: {fileID: 4014668527601610986}
   m_Layer: 0
   m_Name: DieDetector
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

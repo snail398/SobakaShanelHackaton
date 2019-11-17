@@ -57,5 +57,15 @@ namespace HeroSpace
         {
             _anim.SetBool("Idle", false);
         }
+
+        public void Slide()
+        {
+            _movementController.Slide();
+        }
+
+        public void Wait()
+        {
+            _movementController.Wait();
+        }
     }
 }

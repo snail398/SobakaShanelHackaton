@@ -9,6 +9,8 @@ TagManager:
   - Laser
   - Spike
   - Kitty
+  - Ice
+  - Detector
   layers:
   - Default
   - TransparentFX
