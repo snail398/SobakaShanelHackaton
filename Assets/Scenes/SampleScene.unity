@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4721,10 +4721,9 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 319348851}
+  m_Children: []
   m_Father: {fileID: 1236883405}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4743,7 +4742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1566a56107e235c4786fda4cf34c5022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _count: {fileID: 319348852}
+  _count: {fileID: 0}
 --- !u!114 &1221178351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4809,16 +4808,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1036028374}
-  - {fileID: 1458158066}
-  - {fileID: 274992292}
-  - {fileID: 815499749}
-  - {fileID: 59933011}
-  - {fileID: 1358117985}
-  - {fileID: 748567307}
-  - {fileID: 1151542699}
   - {fileID: 1221178349}
-  - {fileID: 1385341514}
   m_Father: {fileID: 850937872}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5629,8 +5619,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1420927362}
+  m_Children: []
   m_Father: {fileID: 850937872}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5675,8 +5664,8 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1932317841}
-  m_HandleRect: {fileID: 1932317840}
+  m_TargetGraphic: {fileID: 1371152121}
+  m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_Value: 0
   m_Size: 0.102564104
@@ -8487,6 +8476,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 703005893788743957, guid: 615f66502d2adac40940f4fe598b96d0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 703005893386301487, guid: 615f66502d2adac40940f4fe598b96d0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 703005893386301487, guid: 615f66502d2adac40940f4fe598b96d0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 795.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 615f66502d2adac40940f4fe598b96d0, type: 3}
